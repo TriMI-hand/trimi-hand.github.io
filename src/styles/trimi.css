@@ -288,24 +288,6 @@ main > .full-bleed > div > h2 {
 main > h2 {
   margin-top: 3rem;
 }
-.assembly-image {
-  position: relative;
-  width: 100%;
-  max-width: 800px;
-  aspect-ratio: 8 / 5;
-  overflow: hidden;
-  border-radius: 0.5rem;
-}
-.assembly-image img {
-  position: absolute;
-  width: 200%;
-  height: 200%;
-  max-width: none;
-  left: -100%;
-  top: 0;
-  margin: 0;
-  object-fit: fill;
-}
 .mode-overview {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -590,17 +572,24 @@ main > h2 {
   touch-action: pan-y;
 }
 .hardware-poster {
+  container-type: size;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
+  overflow: hidden;
 }
 .hardware-poster[hidden] {
   display: none !important;
 }
-.hardware-poster .assembly-image {
-  max-width: 740px;
-  mix-blend-mode: multiply;
+/* A capture of the viewer's first frame. The live camera fits the model to the
+   canvas's shorter side, so size the capture the same way and the swap lines up. */
+.hardware-poster img {
+  flex: none;
+  width: auto;
+  height: min(100cqh, 100cqw);
+  max-width: none;
+  margin: 0;
 }
 .viewer-controls {
   position: absolute;

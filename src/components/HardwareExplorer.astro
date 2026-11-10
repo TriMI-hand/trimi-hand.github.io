@@ -1,5 +1,5 @@
 ---
-import AssemblyImage from "./AssemblyImage.astro";
+const base = import.meta.env.BASE_URL.replace(/\/?$/, "/");
 
 const stages = [
   "Overview",
@@ -30,8 +30,12 @@ const stages = [
         aria-label="Interactive TRIMI assembly"
       >
         <div class="hardware-poster">
-          <AssemblyImage
-            alt="TRIMI hand assembly with a wrist camera, finger mechanisms, and Quest controller"
+          <img
+            src={`${base}data/hardware-poster.webp`}
+            width="1650"
+            height="1131"
+            alt="CAD render of the TRIMI hand assembly"
+            decoding="async"
           />
         </div>
       </div>
