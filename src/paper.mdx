@@ -43,13 +43,15 @@ thumbnail: data/assembly-views.png
 ---
 
 import HighlightedSection from "./components/HighlightedSection.astro";
-import MediaPlaceholder from "./components/MediaPlaceholder.astro";
 import HardwareExplorer from "./components/HardwareExplorer.astro";
 import VideoCard from "./components/VideoCard.astro";
 import VideoTabs from "./components/VideoTabs.astro";
 import Teleoperation from "./components/Teleoperation.astro";
+import YouTubeVideo from "./components/YouTubeVideo.astro";
 
-<MediaPlaceholder title="Main project video" description="Coming soon" kind="video" />
+<div className="main-video not-prose">
+  <YouTubeVideo videoId="Q4nurIYnOPQ" />
+</div>
 
 <HighlightedSection>
 

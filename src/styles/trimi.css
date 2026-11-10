@@ -54,6 +54,9 @@ html {
 .contribution-notes {
   color: #52525b;
 }
+.main-video {
+  margin-block: 2rem 3.5rem;
+}
 .media-placeholder {
   aspect-ratio: 16 / 9;
   border-radius: 12px;
