@@ -1,0 +1,41 @@
+---
+import VideoTabs from "./VideoTabs.astro";
+---
+
+<section
+  id="teleoperation"
+  class="teleop-section full-bleed not-prose"
+  aria-labelledby="teleoperation-title"
+>
+  <div class="teleop-inner">
+    <h2 id="teleoperation-title">Teleoperation</h2>
+    <p class="teleop-summary">
+      One human interface for controlling robotic hands.
+    </p>
+    <VideoTabs
+      id="teleoperation-videos"
+      label="Teleoperation demonstrations"
+      videos={[
+        {
+          file: "teleop-cross-hand",
+          tabLabel: "Across robotic hands",
+          title: "Cross-hand teleoperation",
+          description: "Transferring the operator’s motion to a robotic hand.",
+          heading: "Teleoperation Across Robotic Hands",
+          intro:
+            "TriMI maps the operator’s hand motion to a robotic hand, providing an interface for teleoperation across different hand designs.",
+        },
+        {
+          file: "teleop-midas",
+          tabLabel: "Midas force feedback",
+          title: "Midas hand teleoperation",
+          description:
+            "Joint-level commands to the robot; force feedback to the operator.",
+          heading: "Joint-Level Force Feedback with the Midas Hand",
+          intro:
+            "TriMI teleoperates the Midas hand with joint-level force feedback returned to the operator, connecting commanded motion with haptic feedback.",
+        },
+      ]}
+    />
+  </div>
+</section>

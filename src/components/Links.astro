@@ -1,0 +1,42 @@
+---
+import { Icon } from "astro-icon/components";
+import type { Link } from "../types/types";
+
+interface Props {
+  links: Link[];
+}
+
+const { links } = Astro.props;
+---
+
+<div
+  class="resource-links not-prose flex flex-row flex-wrap justify-center gap-2"
+>
+  {
+    links.map((link) =>
+      link.url ? (
+        <a
+          href={link.url}
+          title={link.description}
+          class="resource-pill flex flex-row items-center gap-2 rounded-full bg-zinc-800 px-5 py-2 text-base text-white hover:bg-black hover:no-underline dark:bg-zinc-200 dark:text-zinc-900 dark:hover:bg-zinc-50"
+        >
+          {link.icon && <Icon name={link.icon} />}
+          <span>{link.name}</span>
+        </a>
+      ) : (
+        <span
+          role="link"
+          aria-disabled="true"
+          aria-label={
+            link.description ? `${link.name}: ${link.description}` : link.name
+          }
+          title={link.description}
+          class="resource-pill resource-pill-pending flex flex-row items-center gap-2 rounded-full bg-zinc-100 px-5 py-2 text-base text-zinc-600 ring-1 ring-zinc-200 ring-inset"
+        >
+          {link.icon && <Icon name={link.icon} />}
+          <span>{link.name}</span>
+        </span>
+      ),
+    )
+  }
+</div>

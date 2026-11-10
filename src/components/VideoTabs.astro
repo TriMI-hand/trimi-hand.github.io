@@ -1,0 +1,89 @@
+---
+import VideoCard from "./VideoCard.astro";
+
+interface VideoTab {
+  file: string;
+  title: string;
+  description?: string;
+  result?: string;
+  tabLabel?: string;
+  heading?: string;
+  intro?: string;
+}
+
+interface Props {
+  /** A unique prefix for this set of tabs and its panels. */
+  id: string;
+  label: string;
+  videos: VideoTab[];
+}
+
+const { id, label, videos } = Astro.props;
+---
+
+<div id={`${id}-video-tabs`} class="video-tabs not-prose" data-video-tabs>
+  <noscript>
+    <p>JavaScript is off. All videos are shown below.</p>
+    <style is:inline>
+      [data-video-tabs] > [data-video-tablist] {
+        display: none;
+      }
+      [data-video-tabs] > [data-video-panel][hidden] {
+        display: block !important;
+      }
+    </style>
+  </noscript>
+  <div
+    class="video-tablist"
+    role="tablist"
+    aria-label={label}
+    aria-orientation="horizontal"
+    data-video-tablist
+  >
+    {
+      videos.map((video, index) => (
+        <button
+          type="button"
+          id={`${id}-video-tab-${index}`}
+          class="video-tab"
+          role="tab"
+          aria-selected={index === 0 ? "true" : "false"}
+          aria-controls={`${id}-video-panel-${index}`}
+          tabindex={index === 0 ? 0 : -1}
+          data-video-tab
+        >
+          {video.tabLabel ?? video.title}
+        </button>
+      ))
+    }
+  </div>
+  {
+    videos.map((video, index) => (
+      <div
+        id={`${id}-video-panel-${index}`}
+        class="video-tabpanel"
+        role="tabpanel"
+        aria-labelledby={`${id}-video-tab-${index}`}
+        tabindex="0"
+        hidden={index !== 0}
+        data-video-panel
+      >
+        {video.heading && <h3 class="video-tab-heading">{video.heading}</h3>}
+        {video.intro && <p class="video-tab-intro">{video.intro}</p>}
+        <VideoCard
+          file={video.file}
+          title={video.title}
+          description={video.description}
+          result={video.result}
+        />
+      </div>
+    ))
+  }
+</div>
+
+<script>
+  import { initializeVideoTabs } from "../scripts/video-tabs";
+
+  initializeVideoTabs();
+  document.addEventListener("astro:page-load", () => initializeVideoTabs());
+</script>

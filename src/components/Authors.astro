@@ -1,0 +1,44 @@
+---
+import type { Author } from "../types/types";
+
+interface Props {
+  authors: Author[];
+}
+
+const { authors } = Astro.props;
+const institutions = [
+  ...new Set(
+    authors
+      .map((author) => author.institution)
+      .filter((institution): institution is string => Boolean(institution)),
+  ),
+];
+---
+
+<div class="author-block not-prose">
+  <div class="research-authors flex flex-wrap justify-center gap-x-2 gap-y-2">
+    {
+      authors.map((author, index) => {
+        const markers = [
+          ...(author.institution
+            ? [String(institutions.indexOf(author.institution) + 1)]
+            : []),
+          ...(author.notes ?? []),
+        ];
+
+        return (
+          <span class="author-name text-lg leading-relaxed whitespace-nowrap">{author.url ? <a href={author.url}>{author.name}</a> : author.name}{markers.length > 0 && <sup class="author-markers ml-0.5 text-sm">{markers.join(",")}</sup>}{index < authors.length - 1 && ","}</span>
+        );
+      })
+    }
+  </div>
+  {
+    institutions.length > 0 && (
+      <div class="research-affiliation" aria-label="Author affiliations">
+        {institutions.map((institution, index) => (
+          <span class="institution-label"><sup>{index + 1}</sup>{" "}{institution}{index < institutions.length - 1 && ","}</span>
+        ))}
+      </div>
+    )
+  }
+</div>

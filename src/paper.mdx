@@ -1,0 +1,134 @@
+---
+title: "TriMI: A Tri-Modal Manipulation Interface for Direct Demonstration, Joint-Level Haptic Teleoperation, and Robotic Execution."
+authors:
+  - name: Mingzhang Zhu
+    institution: UCLA
+  - name: Quanyou Wang
+    institution: UCLA
+    notes: ["*"]
+  - name: Beom Jun Kim
+    institution: UCLA
+    notes: ["*"]
+  - name: Jonathan Liu
+    institution: UCLA
+    notes: ["*"]
+  - name: Daniel Koh
+    institution: UCLA
+  - name: Alden Copps
+    institution: UCLA
+  - name: Alvin Zhu
+    institution: UC Berkeley
+  - name: Dennis Hong
+    institution: UCLA
+notes:
+  - symbol: "*"
+    text: Equal contribution.
+links:
+  - name: arXiv (coming soon)
+    icon: academicons:arxiv
+    description: Paper coming soon.
+  - name: Interactive hardware
+    url: "#hardware"
+    icon: ri:box-3-line
+  - name: Summary
+    icon: ri:twitter-x-line
+    description: X summary coming soon.
+  - name: GitHub (coming soon)
+    icon: ri:github-line
+    description: Full open-source release coming soon.
+theme: light
+favicon: data/favicon.svg
+description: "TriMI is a four-finger, 13-DOF manipulation interface for direct demonstration, joint-level haptic teleoperation, and robotic execution."
+thumbnail: data/assembly-views.png
+---
+
+import HighlightedSection from "./components/HighlightedSection.astro";
+import MediaPlaceholder from "./components/MediaPlaceholder.astro";
+import HardwareExplorer from "./components/HardwareExplorer.astro";
+import VideoCard from "./components/VideoCard.astro";
+import VideoTabs from "./components/VideoTabs.astro";
+import Teleoperation from "./components/Teleoperation.astro";
+
+<MediaPlaceholder title="Main project video" description="Coming soon" kind="video" />
+
+<HighlightedSection>
+
+## Abstract
+
+TriMI is a tri-modal manipulation interface for direct demonstration, joint-level haptic teleoperation, and robotic execution. Its four-finger design provides 13 degrees of freedom: four in the thumb and three in each of the remaining fingers. With a bill of materials cost of approximately USD 800, excluding the tracking device and wrist camera, TriMI enables operators to collect demonstrations through direct physical interaction, teleoperate robotic hands with joint-level haptic feedback, and execute learned manipulation policies. We evaluated a diffusion policy trained on the collected direct demonstrations, achieving 18 successful trials out of 20 for cube pick-and-place (90%) and 12 out of 16 for cap unscrewing (75%). A full open-source release is coming soon.
+
+<div className="spec-grid not-prose" aria-label="TriMI hardware specifications">
+  <div><strong>4</strong><span>Fingers</span></div>
+  <div><strong>13</strong><span>Degrees of freedom</span></div>
+  <div><strong>$800</strong><span>BOM cost*</span></div>
+  <div><strong>Open source</strong><span>Coming soon</span></div>
+</div>
+<p className="spec-note">*Tracking device and wrist camera excluded.</p>
+
+</HighlightedSection>
+
+## Three Modes, One Interface
+
+<div className="mode-overview not-prose">
+  <a href="#direct-demonstration"><span className="mode-number">01</span><h3>Direct Demonstration</h3><p>Manipulate objects by hand through the interface to record demonstrations.</p></a>
+  <a href="#teleoperation"><span className="mode-number">02</span><h3>Joint-Level Haptic Teleoperation</h3><p>Control the robot joint by joint and receive haptic feedback.</p></a>
+  <a href="#robotic-execution"><span className="mode-number">03</span><h3>Robotic Execution</h3><p>Execute manipulation on the robot using the same interface hardware.</p></a>
+</div>
+
+<HardwareExplorer />
+
+<section className="video-section full-bleed not-prose" aria-labelledby="dexterity-title">
+  <div className="video-section-inner">
+    <h2 id="dexterity-title">Dexterity</h2>
+    <p className="section-intro">Six tasks showcasing TriMI’s dexterity, from in-hand manipulation to tool use.</p>
+    <VideoTabs id="dexterity-videos" label="Dexterity tasks" videos={[
+      { file: "dexterity/cube-rotate", title: "Cube rotation", description: "Reorienting a cube within the hand." },
+      { file: "dexterity/cut-peel-tape", title: "Cutting and peeling tape", description: "Coordinating contact to manipulate tape." },
+      { file: "dexterity/multi-grasp", title: "Multiple grasps", description: "Grasping objects with different hand configurations." },
+      { file: "dexterity/put-drill-bit", title: "Drill bit insertion", description: "Positioning and inserting a drill bit." },
+      { file: "dexterity/retain-cup", title: "Cup retention", description: "Maintaining a grasp on a cup." },
+      { file: "dexterity/screw-sort", title: "Screw sorting", description: "Picking and sorting small screws." }
+    ]} />
+  </div>
+</section>
+
+## Direct Demonstration
+
+An operator manipulates objects by hand through TriMI to collect demonstrations. The two tasks below provide the demonstration data used to train the diffusion policy evaluated in robotic execution.
+
+<VideoTabs id="demonstration-videos" label="Direct demonstration tasks" videos={[
+  { file: "demonstration-pick-place", title: "Cube pick-and-place", description: "Direct demonstration" },
+  { file: "demonstration-unscrew", title: "Cap unscrewing", description: "Direct demonstration" }
+]} />
+
+## Robotic Execution
+
+TriMI carries the manipulation workflow from human demonstration to autonomous robotic execution.
+
+<VideoTabs id="execution-videos" label="Robotic execution videos" videos={[
+  {
+    file: "tpu-hand", tabLabel: "TPU hand showcase", title: "TPU hand in motion",
+    description: "A closer look at the hand’s movement.",
+    heading: "TPU Hand Showcase", intro: "Explore the motion of the TPU hand before viewing the autonomous policy rollouts."
+  },
+  {
+    file: "policy-pick-place", tabLabel: "Cube pick-and-place", title: "Cube pick-and-place",
+    description: "Autonomous diffusion policy", result: "18 / 20 successful trials · 90%",
+    heading: "Autonomous Policy Rollout: Cube Pick-and-Place",
+    intro: "A diffusion policy trained on the collected direct demonstrations performs cube pick-and-place. This video shows an example rollout; the success rate summarizes 20 evaluation trials."
+  },
+  {
+    file: "policy-unscrew", tabLabel: "Cap unscrewing", title: "Cap unscrewing",
+    description: "Autonomous diffusion policy", result: "12 / 16 successful trials · 75%",
+    heading: "Autonomous Policy Rollout: Cap Unscrewing",
+    intro: "A diffusion policy trained on the collected direct demonstrations unscrews a bottle cap. This video shows an example rollout; the success rate summarizes 16 evaluation trials."
+  }
+]} />
+
+## Wearability
+
+TriMI is worn on the operator’s hand, allowing direct interaction with objects through the interface.
+
+<VideoCard file="wearability" title="Wearing TriMI" description="The interface in use on the operator’s hand." />
+
+<Teleoperation />

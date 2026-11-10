@@ -1,0 +1,36 @@
+---
+interface Props {
+  file: string;
+  title: string;
+  description?: string;
+  result?: string;
+}
+const { file, title, description, result } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const source = `${base}/videos/${file}`;
+---
+
+<figure class="video-card not-prose">
+  <div class="video-frame">
+    <video
+      controls
+      playsinline
+      muted
+      loop
+      preload="none"
+      poster={`${source}.jpg`}
+      aria-label={`${title}${description ? ` — ${description}` : ""}`}
+      width="1280"
+      height="720"
+    >
+      <source src={`${source}.mp4`} type="video/mp4" />
+      Your browser does not support embedded video.
+      <a href={`${source}.mp4`}>Download {title}</a>.
+    </video>
+  </div>
+  <figcaption>
+    <h3>{title}</h3>
+    {description && <p>{description}</p>}
+    {result && <p class="policy-result">{result}</p>}
+  </figcaption>
+</figure>

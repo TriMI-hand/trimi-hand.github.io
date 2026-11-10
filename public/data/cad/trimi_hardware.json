@@ -1,0 +1,632 @@
+{
+ "source": "TriMI_lookdev_v37.blend",
+ "fps": 30,
+ "segments": {
+  "components": {
+   "samples": 31,
+   "fps": 30,
+   "shell": [
+    0,
+    30
+   ]
+  },
+  "tip": {
+   "samples": 31,
+   "fps": 30
+  },
+  "finger": {
+   "samples": 55,
+   "fps": 15.0,
+   "loop": true
+  },
+  "thumb": {
+   "samples": 113,
+   "fps": 15.0,
+   "loop": true,
+   "filmFrames": [
+    4172,
+    4396
+   ]
+  },
+  "tpu": {
+   "samples": 31,
+   "fps": 30,
+   "pose": {
+    "gloves": {
+     "GLOVE_index_MCP": 0.0,
+     "GLOVE_index_PIP": 0.0,
+     "GLOVE_middle_MCP": 0.0,
+     "GLOVE_middle_PIP": 0.0,
+     "GLOVE_ring_MCP": 0.0,
+     "GLOVE_ring_PIP": 0.0,
+     "GLOVE_thumb_B1": -0.5585,
+     "GLOVE_thumb_B2": -0.0834,
+     "GLOVE_thumb_MCP": 0.2774,
+     "GLOVE_thumb_IP": -0.1745
+    },
+    "abad": {
+     "index": {
+      "angle": -0.154,
+      "pivot": [
+       -0.01342,
+       -0.021303,
+       0.174961
+      ],
+      "axis": [
+       -0.0,
+       -0.0,
+       1.0
+      ],
+      "nodes": [
+       "new_index_assem_v2 <1>",
+       "GLOVE_index_MCP"
+      ]
+     },
+     "middle": {
+      "angle": 0.0,
+      "pivot": [
+       -0.03772,
+       -0.021303,
+       0.174961
+      ],
+      "axis": [
+       0.0,
+       0.0,
+       1.0
+      ],
+      "nodes": [
+       "middle_assembly_v2 <1>",
+       "GLOVE_middle_MCP"
+      ]
+     },
+     "ring": {
+      "angle": 0.21,
+      "pivot": [
+       -0.070903,
+       -0.0168,
+       0.16451
+      ],
+      "axis": [
+       -0.172645,
+       0.022729,
+       0.984722
+      ],
+      "nodes": [
+       "ring_finger_assem_v2 <1>",
+       "GLOVE_ring_MCP"
+      ]
+     }
+    }
+   }
+  }
+ },
+ "moving": {
+  "components": 79,
+  "tip": 36,
+  "finger": 70,
+  "thumb": 121,
+  "tpu": 33
+ },
+ "fingerHidden": [
+  "1",
+  "1.001",
+  "1.002",
+  "1.003",
+  "1.004",
+  "1.005",
+  "102 RESISTOR PACK__Boss-Extrude5",
+  "102 RESISTOR PACK__Cut-Extrude7",
+  "102 RESISTOR PACK__Fillet1",
+  "102 RESISTOR PACK__Fillet2",
+  "102 RESISTOR PACK__LPattern3[1]",
+  "102 RESISTOR PACK__LPattern3[2]",
+  "102 RESISTOR PACK__LPattern3[3]",
+  "102 RESISTOR PACK__LPattern3[4]",
+  "102 RESISTOR PACK__LPattern3[5]",
+  "102 RESISTOR PACK__LPattern3[6]",
+  "15pin_header____LPattern2",
+  "15pin_header____LPattern2_1",
+  "16mhz crystal - measured__LPattern1",
+  "189 RESISTOR PACK__Boss-Extrude5",
+  "189 RESISTOR PACK__Cut-Extrude7",
+  "189 RESISTOR PACK__Fillet1",
+  "189 RESISTOR PACK__Fillet2",
+  "189 RESISTOR PACK__LPattern3[1]",
+  "189 RESISTOR PACK__LPattern3[2]",
+  "189 RESISTOR PACK__LPattern3[3]",
+  "189 RESISTOR PACK__LPattern3[4]",
+  "189 RESISTOR PACK__LPattern3[5]",
+  "189 RESISTOR PACK__LPattern3[6]",
+  "2",
+  "26",
+  "51",
+  "51.001",
+  "51.002",
+  "51.003",
+  "51.004",
+  "51.005",
+  "51.006",
+  "51.007",
+  "Body:1",
+  "Body:1.001",
+  "CUI_PJ-102A-95_1",
+  "DC15_A01_CASE_M_DUMMY.003",
+  "DC15_A01_CASE_M_DUMMY.004",
+  "DC15_A01_CASE_M_DUMMY.005",
+  "DC15_A01_CASE_M_DUMMY.010",
+  "DC15_A01_CASE_M_DUMMY.011",
+  "DC15_A01_CASE_M_DUMMY.012",
+  "DC15_A01_CASE_M_DUMMY.022",
+  "DC15_A01_CASE_M_DUMMY.023",
+  "DC15_A01_CASE_M_DUMMY.024",
+  "DC15_A01_CASE_M_DUMMY.025",
+  "Fingercot_Ring",
+  "Hub_silk_robotis.001",
+  "Hub_silk_rs485.001",
+  "Hub_silk_title.001",
+  "Hub_silk_ttl.001",
+  "Leads:1",
+  "Leads:1.001",
+  "MINI USB CONTACT__Fillet2",
+  "MINI USB CONTACT__Fillet2_1",
+  "MINI USB CONTACT__Fillet2_2",
+  "MINI USB CONTACT__Fillet2_3",
+  "MINI USB CONTACT__Fillet2_4",
+  "MINIUSBCORE__Fillet3",
+  "MINIUSBSHELL__Fillet14",
+  "Mirror1.001",
+  "Mirror1.002",
+  "Mirror1.006",
+  "Mirror1.007",
+  "Mirror1.008",
+  "NANO DIODE__Fillet9",
+  "Part 1.021",
+  "Part 2.050",
+  "Part 3",
+  "Part 4.001",
+  "Part 4.003",
+  "Part 5.001",
+  "Part 5.005",
+  "Part 5.006",
+  "Revolve-Thin1.001",
+  "Revolve-Thin1.002",
+  "Revolve-Thin1.006",
+  "Revolve-Thin1.007",
+  "Revolve-Thin1.008",
+  "Revolve1[1].001",
+  "Revolve1[1].002",
+  "Revolve1[1].006",
+  "Revolve1[1].007",
+  "Revolve1[1].008",
+  "Revolve1[2].001",
+  "Revolve1[2].002",
+  "Revolve1[2].006",
+  "Revolve1[2].007",
+  "Revolve1[2].008",
+  "TI logo:1",
+  "TI logo:1.001",
+  "TactileSensor_index",
+  "TactileSensor_ring",
+  "TactileSensor_thumb",
+  "Texas txt:1",
+  "Texas txt:1.001",
+  "U2D2_C0",
+  "U2D2_C0_term",
+  "U2D2_C0_term.001",
+  "U2D2_C1",
+  "U2D2_C1_term",
+  "U2D2_C1_term.001",
+  "U2D2_C2",
+  "U2D2_C2_term",
+  "U2D2_C2_term.001",
+  "U2D2_C3",
+  "U2D2_C3_term",
+  "U2D2_C3_term.001",
+  "U2D2_C4",
+  "U2D2_C4_term",
+  "U2D2_C4_term.001",
+  "U2D2_C5",
+  "U2D2_C5_term",
+  "U2D2_C5_term.001",
+  "U2D2_C6",
+  "U2D2_C6_term",
+  "U2D2_C6_term.001",
+  "U2D2_C7",
+  "U2D2_C7_term",
+  "U2D2_C7_term.001",
+  "U2D2_Case",
+  "U2D2_Crystal",
+  "U2D2_IC_FT232",
+  "U2D2_IC_dot",
+  "U2D2_IC_leadA0",
+  "U2D2_IC_leadA1",
+  "U2D2_IC_leadA10",
+  "U2D2_IC_leadA11",
+  "U2D2_IC_leadA12",
+  "U2D2_IC_leadA13",
+  "U2D2_IC_leadA2",
+  "U2D2_IC_leadA3",
+  "U2D2_IC_leadA4",
+  "U2D2_IC_leadA5",
+  "U2D2_IC_leadA6",
+  "U2D2_IC_leadA7",
+  "U2D2_IC_leadA8",
+  "U2D2_IC_leadA9",
+  "U2D2_IC_leadB0",
+  "U2D2_IC_leadB1",
+  "U2D2_IC_leadB10",
+  "U2D2_IC_leadB11",
+  "U2D2_IC_leadB12",
+  "U2D2_IC_leadB13",
+  "U2D2_IC_leadB2",
+  "U2D2_IC_leadB3",
+  "U2D2_IC_leadB4",
+  "U2D2_IC_leadB5",
+  "U2D2_IC_leadB6",
+  "U2D2_IC_leadB7",
+  "U2D2_IC_leadB8",
+  "U2D2_IC_leadB9",
+  "U2D2_IC_legA0",
+  "U2D2_IC_legA1",
+  "U2D2_IC_legA10",
+  "U2D2_IC_legA11",
+  "U2D2_IC_legA12",
+  "U2D2_IC_legA13",
+  "U2D2_IC_legA2",
+  "U2D2_IC_legA3",
+  "U2D2_IC_legA4",
+  "U2D2_IC_legA5",
+  "U2D2_IC_legA6",
+  "U2D2_IC_legA7",
+  "U2D2_IC_legA8",
+  "U2D2_IC_legA9",
+  "U2D2_IC_legB0",
+  "U2D2_IC_legB1",
+  "U2D2_IC_legB10",
+  "U2D2_IC_legB11",
+  "U2D2_IC_legB12",
+  "U2D2_IC_legB13",
+  "U2D2_IC_legB2",
+  "U2D2_IC_legB3",
+  "U2D2_IC_legB4",
+  "U2D2_IC_legB5",
+  "U2D2_IC_legB6",
+  "U2D2_IC_legB7",
+  "U2D2_IC_legB8",
+  "U2D2_IC_legB9",
+  "U2D2_LED_PWR",
+  "U2D2_LED_PWR_lens",
+  "U2D2_LED_RxD",
+  "U2D2_LED_RxD_lens",
+  "U2D2_LED_TxD",
+  "U2D2_LED_TxD_lens",
+  "U2D2_PCB",
+  "U2D2_RS485_Housing",
+  "U2D2_RS485_Pin0",
+  "U2D2_RS485_Pin1",
+  "U2D2_RS485_Pin2",
+  "U2D2_RS485_Pin3",
+  "U2D2_SOT23",
+  "U2D2_TTL_Housing",
+  "U2D2_TTL_Pin0",
+  "U2D2_TTL_Pin1",
+  "U2D2_TTL_Pin2",
+  "U2D2_UART_Housing",
+  "U2D2_UART_Pin0",
+  "U2D2_UART_Pin1",
+  "U2D2_UART_Pin2",
+  "U2D2_UART_Pin3",
+  "U2D2_USBC_Pin_B0",
+  "U2D2_USBC_Pin_B1",
+  "U2D2_USBC_Pin_B10",
+  "U2D2_USBC_Pin_B11",
+  "U2D2_USBC_Pin_B2",
+  "U2D2_USBC_Pin_B3",
+  "U2D2_USBC_Pin_B4",
+  "U2D2_USBC_Pin_B5",
+  "U2D2_USBC_Pin_B6",
+  "U2D2_USBC_Pin_B7",
+  "U2D2_USBC_Pin_B8",
+  "U2D2_USBC_Pin_B9",
+  "U2D2_USBC_Pin_T0",
+  "U2D2_USBC_Pin_T1",
+  "U2D2_USBC_Pin_T10",
+  "U2D2_USBC_Pin_T11",
+  "U2D2_USBC_Pin_T2",
+  "U2D2_USBC_Pin_T3",
+  "U2D2_USBC_Pin_T4",
+  "U2D2_USBC_Pin_T5",
+  "U2D2_USBC_Pin_T6",
+  "U2D2_USBC_Pin_T7",
+  "U2D2_USBC_Pin_T8",
+  "U2D2_USBC_Pin_T9",
+  "U2D2_USBC_Shell",
+  "U2D2_USBC_Tab",
+  "U2D2_USBC_Tab.001",
+  "U2D2_USBC_Tongue",
+  "U2D2_silk_PWR.001",
+  "U2D2_silk_RS485.001",
+  "U2D2_silk_RxD.001",
+  "U2D2_silk_TTL.001",
+  "U2D2_silk_TxD.001",
+  "U2D2_silk_UART.001",
+  "U2D2_silk_logo.001",
+  "U2D2_silk_robotis.001",
+  "_mcp_link_l_mirror",
+  "_mcp_link_l_v2",
+  "_mcp_link_m_mirror",
+  "_mcp_link_m_v2",
+  "_mcp_link_r_mirror",
+  "_mcp_link_r_v2",
+  "_mcp_servoMount_mirror",
+  "_mcp_servoMount_v2",
+  "_mcp_servoShaft",
+  "_mcp_servoShaft.001",
+  "_mcp_servoShaft.004",
+  "_mcp_servoShaft.005",
+  "_mcp_servoShaft.006",
+  "_pip_link_l_v2",
+  "_pip_link_l_v2_mirror",
+  "_pip_link_r_v2",
+  "_pip_link_r_v2_mirror",
+  "atmega328__Cut-Extrude6",
+  "cap106C__Boss-Extrude6",
+  "cap106C__Boss-Extrude6_1",
+  "cover_new",
+  "ftdi FT232rl__Cut-Extrude1",
+  "gear_MCP",
+  "gear_MCP_mirror",
+  "gear_PIP",
+  "gear_PIP_mirror",
+  "ip GEAR.001",
+  "led__Boss-Extrude5",
+  "led__Boss-Extrude5_1",
+  "led__Boss-Extrude5_2",
+  "led__Boss-Extrude5_3",
+  "led__Mirror3",
+  "led__Mirror3_1",
+  "led__Mirror3_2",
+  "led__Mirror3_3",
+  "nano - reg__Cut-Extrude2",
+  "nano-board__Cut-Extrude6",
+  "palm_holder_v2.001",
+  "palm_holder_v4",
+  "reset core__Fillet3",
+  "reset shell__Cut-Extrude2",
+  "smt_resistor222__Fillet2",
+  "smt_resistor222__Fillet2_1",
+  "smt_resistor222__Fillet2_2",
+  "smt_resistor222__Fillet2_3",
+  "smt_resistor222__Fillet2_4",
+  "thumb_fingercot",
+  "wire_board"
+ ],
+ "quest": [
+  "quest_controller__quest_controller",
+  "quest_controller__quest_controller_covewr",
+  "Quest_Menu_Button",
+  "Quest_Symbol_B",
+  "Quest_Symbol_MetaLogo",
+  "quest top"
+ ],
+ "camera": [
+  "camera_arm",
+  "Part 9.136",
+  "Part 10.084",
+  "Part 1.010",
+  "Part 2.002",
+  "Part 7.010",
+  "Part 8.017",
+  "Part 5__Part 5",
+  "Part 6__Part 6",
+  "Surface 1__Surface 1"
+ ],
+ "hologram": {
+  "mesh": "HOLO_Real",
+  "rig": "HAND_Rig"
+ },
+ "joints": {
+  "GLOVE_index_MCP": {
+   "pivot": [
+    -0.006,
+    -0.029025,
+    0.110485
+   ],
+   "axis": [
+    0.976718,
+    0.214498,
+    0.003602
+   ]
+  },
+  "GLOVE_index_PIP": {
+   "pivot": [
+    -0.001,
+    -0.073999,
+    0.110418
+   ],
+   "axis": [
+    0.976718,
+    0.214498,
+    0.003602
+   ]
+  },
+  "GLOVE_middle_MCP": {
+   "pivot": [
+    -0.029,
+    -0.030356,
+    0.1104
+   ],
+   "axis": [
+    0.999987,
+    0.003582,
+    0.003658
+   ]
+  },
+  "GLOVE_middle_PIP": {
+   "pivot": [
+    -0.037,
+    -0.080385,
+    0.110364
+   ],
+   "axis": [
+    0.999987,
+    0.003582,
+    0.003658
+   ]
+  },
+  "GLOVE_ring_MCP": {
+   "pivot": [
+    -0.053,
+    -0.029362,
+    0.102123
+   ],
+   "axis": [
+    0.95206,
+    -0.250011,
+    0.176285
+   ]
+  },
+  "GLOVE_ring_PIP": {
+   "pivot": [
+    -0.076,
+    -0.069839,
+    0.099105
+   ],
+   "axis": [
+    0.95206,
+    -0.250011,
+    0.176285
+   ]
+  },
+  "GLOVE_thumb_B1": {
+   "pivot": [
+    0.006172,
+    0.097339,
+    0.08319
+   ],
+   "axis": [
+    0.294233,
+    0.953551,
+    -0.06456
+   ]
+  },
+  "GLOVE_thumb_B2": {
+   "pivot": [
+    -0.000125,
+    0.042969,
+    0.160266
+   ],
+   "axis": [
+    0.160999,
+    0.087186,
+    0.983096
+   ]
+  },
+  "GLOVE_thumb_MCP": {
+   "pivot": [
+    0.046999,
+    0.059767,
+    0.097816
+   ],
+   "axis": [
+    0.522734,
+    0.78746,
+    0.326582
+   ]
+  },
+  "GLOVE_thumb_IP": {
+   "pivot": [
+    0.048935,
+    -0.001177,
+    0.088338
+   ],
+   "axis": [
+    -0.299504,
+    -0.189029,
+    0.935182
+   ]
+  },
+  "IDX_ABAD": {
+   "pivot": [
+    -0.01342,
+    -0.021303,
+    0.174961
+   ],
+   "axis": [
+    -0.0,
+    0.0,
+    1.0
+   ]
+  },
+  "middle_ABAD": {
+   "pivot": [
+    -0.03772,
+    -0.021303,
+    0.174961
+   ],
+   "axis": [
+    -0.0,
+    0.0,
+    1.0
+   ]
+  }
+ },
+ "rings": {
+  "ROT_middle_MCP_ring": {
+   "center": [
+    -0.022972,
+    -0.030335,
+    0.110422
+   ],
+   "radius": 0.0055
+  },
+  "ROT_middle_MCP_pitch": {
+   "center": [
+    -0.022972,
+    -0.030335,
+    0.110422
+   ],
+   "radius": 0.0314
+  },
+  "ROT_middle_PIP_ring": {
+   "center": [
+    -0.030972,
+    -0.080364,
+    0.110386
+   ],
+   "radius": 0.0055
+  },
+  "ROT_middle_PIP_pitch": {
+   "center": [
+    -0.030972,
+    -0.080364,
+    0.110386
+   ],
+   "radius": 0.0314
+  }
+ },
+ "tactileCot": {
+  "cap": "Part 1",
+  "sensor": "TactileSensor_middle",
+  "pad": "Part 5"
+ },
+ "semiCot": {
+  "shell": "Cot_Shell",
+  "nail": "Cot_Nail",
+  "silicone": "Cot_Silicone"
+ },
+ "tpu": [
+  "TPU_1cmc",
+  "TPU_1mcp",
+  "TPU_2mcp",
+  "TPU_2pip",
+  "TPU_3mcp",
+  "TPU_3pip",
+  "TPU_4mcp",
+  "TPU_4pip",
+  "TPU_5pip",
+  "TPU_Part_12",
+  "TPU_Part_9",
+  "TPU_skin"
+ ]
+}

@@ -1,0 +1,68 @@
+---
+import AssemblyImage from "./AssemblyImage.astro";
+
+const stages = [
+  "Overview",
+  "Components",
+  "Finger Design",
+  "Thumb Design",
+  "Fingertip Design",
+  "Modular Design",
+  "TPU Hand",
+];
+---
+
+<section
+  id="hardware"
+  class="hardware-section hardware-static full-bleed not-prose"
+  aria-labelledby="hardware-title"
+>
+  <div class="hardware-stage">
+    <div class="hardware-heading">
+      <h2 id="hardware-title">Hardware</h2>
+      <p>Scroll through the TRIMI interface, or drag to rotate.</p>
+    </div>
+    <div class="hardware-view">
+      <div class="viewer-grid" aria-hidden="true"></div>
+      <div
+        id="hardware-canvas"
+        role="region"
+        aria-label="Interactive TRIMI assembly"
+      >
+        <div class="hardware-poster">
+          <AssemblyImage
+            alt="TRIMI hand assembly with a wrist camera, finger mechanisms, and Quest controller"
+          />
+        </div>
+      </div>
+      <div id="hardware-labels" class="hardware-labels" aria-hidden="true">
+      </div>
+      <div class="viewer-controls">
+        <button id="hardware-motion" type="button" disabled
+          >Pause rotation</button
+        >
+        <button id="hardware-reset" type="button" disabled>Reset view ↺</button>
+      </div>
+      <p id="hardware-status" class="viewer-status" role="status">
+        Assembly preview
+      </p>
+    </div>
+    <div class="hardware-steps" aria-label="Hardware stages">
+      {
+        stages.map((name, i) => (
+          <button
+            type="button"
+            data-hardware-step={i}
+            aria-pressed={i === 0 ? "true" : "false"}
+          >
+            <span>{String(i + 1).padStart(2, "0")}</span>
+            <strong>{name}</strong>
+          </button>
+        ))
+      }
+    </div>
+    <div class="hardware-track" aria-hidden="true">
+      <div id="hardware-progress"></div>
+    </div>
+  </div>
+</section>

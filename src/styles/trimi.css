@@ -1,0 +1,945 @@
+/* TriMI additions to the NAS-GS-Page template. The original academic
+   typography, centered title, link pills, and highlighted sections are retained. */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+}
+:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 5px;
+}
+.skip-link {
+  position: fixed;
+  top: -100px;
+  left: 16px;
+  z-index: 100;
+  background: white;
+  color: #18181b;
+  padding: 12px;
+}
+.skip-link:focus {
+  top: 12px;
+}
+.research-title {
+  text-wrap: balance;
+  line-height: 1.16;
+}
+.research-header .research-title {
+  line-height: 1.2;
+  margin-bottom: 2rem;
+}
+.author-block {
+  display: grid;
+  justify-items: center;
+  gap: 0.75rem;
+}
+.research-authors {
+  max-width: 58rem;
+}
+.research-affiliation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 0.5rem;
+  margin: 0;
+  max-width: 50rem;
+  text-wrap: balance;
+  color: #3f3f46;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+.institution-label {
+  white-space: nowrap;
+}
+.contribution-notes {
+  color: #52525b;
+}
+.media-placeholder {
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.7rem;
+  margin-block: 2rem 3.5rem;
+  background: #181b1d;
+  color: #fafafa;
+  text-align: center;
+  padding: 1.5rem;
+}
+.placeholder-symbol {
+  width: 46px;
+  margin-bottom: 0.5rem;
+  opacity: 0.65;
+}
+.media-placeholder strong {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: inherit;
+}
+.media-placeholder span {
+  color: #a1a1aa;
+  font-size: 0.9rem;
+}
+.spec-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #bcbcc2;
+  text-align: center;
+}
+.spec-grid div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.spec-grid strong {
+  font-size: clamp(1rem, 2.4vw, 1.6rem);
+  font-weight: 600;
+  line-height: 1.4;
+}
+.spec-grid span,
+.spec-note {
+  font-size: 0.8rem;
+  color: #52525b;
+}
+.spec-note {
+  text-align: center;
+  margin-top: 1.3rem;
+}
+.hardware-placeholder-section {
+  text-align: center;
+  margin-block: 4rem;
+}
+.hardware-placeholder-section h2,
+.video-section h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 0 0 1rem;
+}
+.hardware-placeholder-section > p,
+.section-intro {
+  color: #52525b;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+.placeholder-hardware {
+  background: #f4f4f5;
+  border: 1px dashed #a1a1aa;
+  color: #3f3f46;
+  aspect-ratio: 2 / 1;
+}
+.placeholder-hardware span {
+  color: #71717a;
+}
+.video-section {
+  background: #f7f7f8;
+  padding: 3.5rem 1.5rem;
+  margin-block: 4rem;
+}
+.video-section-inner {
+  max-width: 960px;
+  margin: auto;
+}
+.video-section h2,
+.section-intro {
+  text-align: center;
+}
+.video-tabs {
+  margin-block: 2rem;
+  min-width: 0;
+}
+.video-tablist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+}
+.video-tab {
+  border: 1px solid color-mix(in srgb, currentColor 25%, transparent);
+  border-radius: 8px;
+  background: transparent;
+  color: inherit;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  font-weight: 500;
+  padding: 0.65rem 0.85rem;
+  cursor: pointer;
+}
+.video-tab:hover {
+  background: color-mix(in srgb, currentColor 6%, transparent);
+}
+.video-tab[aria-selected="true"] {
+  background: color-mix(in srgb, currentColor 10%, transparent);
+  border-color: currentColor;
+  box-shadow: inset 0 -2px 0 currentColor;
+  font-weight: 700;
+}
+.video-tabpanel[hidden] {
+  display: none;
+}
+.video-tab-heading {
+  color: inherit;
+  margin: 0 0 0.75rem;
+  font-size: 1.3rem;
+  line-height: 1.4;
+  font-weight: 600;
+}
+.video-tab-intro {
+  color: #52525b;
+  font-size: 1rem;
+  line-height: 1.8;
+  margin: 0 0 1.5rem;
+}
+.teleop-section .video-tab-intro {
+  color: var(--teleop-muted);
+}
+.video-card {
+  min-width: 0;
+  margin: 2rem 0;
+}
+.video-tabpanel .video-card {
+  margin: 0;
+}
+.video-frame {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #141414;
+}
+.video-frame video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  margin: 0;
+}
+.video-card figcaption {
+  text-align: left;
+  margin-top: 0.9rem;
+}
+.video-card figcaption h3 {
+  color: inherit;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 600;
+  margin: 0;
+}
+.video-card figcaption p {
+  font-size: 0.85rem;
+  line-height: 1.65;
+  margin: 0.3rem 0 0;
+  color: #52525b;
+}
+.video-card .policy-result {
+  display: inline-block;
+  color: #166534;
+  background: #f0fdf4;
+  padding: 0.4rem 0.75rem;
+  border: 1px solid #bbf7d0;
+  border-radius: 6px;
+  margin-top: 0.8rem;
+  font-weight: 600;
+}
+.teleop-section .video-card figcaption p {
+  color: var(--teleop-muted);
+}
+@media (max-width: 600px) {
+  .video-tab {
+    font-size: 0.8rem;
+    padding: 0.55rem 0.7rem;
+  }
+  .spec-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 1.5rem;
+  }
+  .placeholder-hardware {
+    aspect-ratio: 16 / 9;
+  }
+  .media-placeholder strong {
+    font-size: 1rem;
+  }
+}
+.research-subtitle {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #52525b;
+  text-wrap: balance;
+}
+.publication-note {
+  font-size: 0.9rem;
+  color: #71717a;
+  margin-block: 0;
+}
+main > h2,
+main > .full-bleed > div > h2 {
+  text-align: center;
+}
+main > h2 {
+  margin-top: 3rem;
+}
+.assembly-image {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 8 / 5;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+.assembly-image img {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  max-width: none;
+  left: -100%;
+  top: 0;
+  margin: 0;
+  object-fit: fill;
+}
+.mode-overview {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-block: 2rem 4rem;
+  text-align: center;
+}
+.mode-overview a {
+  color: #27272a;
+  padding-block: 1rem;
+  text-decoration: none;
+}
+.mode-overview a:hover h3 {
+  color: #2563eb;
+}
+.mode-number {
+  display: block;
+  color: #71717a;
+  font-size: 0.85rem;
+  margin-bottom: 0.75rem;
+}
+.mode-overview h3 {
+  font-size: 1.1rem;
+  line-height: 1.4;
+  font-weight: 600;
+  margin: 0 0 1rem;
+}
+.mode-overview p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #52525b;
+  margin: 0;
+}
+.workflow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  background: #f4f4f5;
+  border-radius: 0.5rem;
+  padding: 2.5rem 1.5rem;
+  margin-top: 2rem;
+  font-size: 1rem;
+}
+.workflow strong {
+  font-weight: 500;
+  color: white;
+  padding: 0.75rem 1rem;
+  background: #27272a;
+  border-radius: 0.5rem;
+}
+.media-note {
+  text-align: center;
+  color: #71717a;
+  font-size: 0.9rem;
+}
+.template-credit {
+  background: #f4f4f5;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  margin-top: 4rem;
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+.template-credit p {
+  max-width: 800px;
+  margin: 0.5rem auto;
+}
+.hardware-section {
+  --hw-ink: #27272a;
+  --hw-muted: #52525b;
+  --hw-line: #3f3f46;
+  --hw-accent: #ff7a1a;
+  height: 880vh;
+  min-height: 3260px;
+  background: #f4f4f5;
+  margin-block: 3rem;
+}
+/* The close-up stages (finger, thumb, fingertip) are lit like the film: dark backdrop. */
+.hardware-section.is-dark {
+  --hw-ink: #f4f4f5;
+  --hw-muted: #a1a1aa;
+  --hw-line: rgba(244, 244, 245, 0.72);
+  background: #0e1014;
+  color: #f4f4f5;
+}
+.hardware-section .hardware-heading h2,
+.hardware-section .hardware-heading p,
+.hardware-section .hardware-steps button,
+.hardware-section .viewer-status,
+.hardware-section .viewer-controls button {
+  transition:
+    color 0.6s ease,
+    background-color 0.6s ease,
+    border-color 0.6s ease;
+}
+.hardware-section.is-dark .hardware-heading p,
+.hardware-section.is-dark .viewer-status {
+  color: #a1a1aa;
+}
+.hardware-section.is-dark .hardware-steps button {
+  color: #a1a1aa;
+  border-top-color: #3f3f46;
+}
+.hardware-section.is-dark .hardware-steps button[aria-pressed="true"] {
+  color: #fff;
+  border-color: var(--hw-accent);
+}
+.hardware-section.is-dark .hardware-track {
+  background: #27272a;
+}
+.hardware-section.is-dark #hardware-progress {
+  background: var(--hw-accent);
+}
+.hardware-section.is-dark .viewer-controls button {
+  background: #18181b;
+  color: #e4e4e7;
+  border-color: #3f3f46;
+}
+/* The viewer's canvas is opaque, so the grid is drawn over it, blended in. */
+.hardware-section .viewer-grid {
+  z-index: 1;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+}
+.hardware-section.is-dark .viewer-grid {
+  mix-blend-mode: screen;
+  opacity: 0.22;
+}
+.hardware-labels {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+.hw-leaders {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.hw-leaders path {
+  fill: none;
+  stroke: var(--hw-line);
+  stroke-width: 1;
+}
+.hw-leaders circle {
+  fill: var(--hw-accent);
+  stroke: #fff;
+  stroke-width: 1;
+}
+.hw-label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 0 0.4rem;
+  white-space: nowrap;
+  color: var(--hw-ink);
+  line-height: 1.25;
+  text-shadow:
+    0 0 4px #f4f4f5,
+    0 0 10px #f4f4f5;
+  will-change: transform;
+}
+.hardware-section.is-dark .hw-label {
+  text-shadow:
+    0 0 4px #0e1014,
+    0 0 10px #0e1014;
+}
+.hw-label[data-side="left"] {
+  text-align: right;
+}
+.hw-label strong {
+  display: block;
+  font-size: 0.74rem;
+  font-weight: 600;
+}
+.hw-label span {
+  display: block;
+  font-size: 0.64rem;
+  color: var(--hw-muted);
+}
+/* Option buttons above a stage (finger cots, wrist modules): the shown one is filled. */
+.hw-switch {
+  position: absolute;
+  top: 0.6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.4rem;
+  pointer-events: auto;
+}
+.hw-switch button {
+  padding: 0.38rem 0.85rem;
+  border: 1px solid var(--hw-line);
+  border-radius: 0.6rem;
+  background: transparent;
+  color: var(--hw-ink);
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color 0.25s,
+    border-color 0.25s,
+    color 0.25s;
+}
+.hw-switch button:hover {
+  border-color: var(--hw-accent);
+}
+.hw-switch button:focus-visible {
+  outline: 2px solid var(--hw-accent);
+  outline-offset: 2px;
+}
+.hw-switch button.on {
+  background: var(--hw-accent);
+  border-color: var(--hw-accent);
+  color: #fff;
+}
+.hw-switch strong {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+.hw-switch span {
+  display: block;
+  font-size: 0.64rem;
+  opacity: 0.75;
+}
+.hardware-stage {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100svh;
+  min-height: 620px;
+  width: min(1100px, calc(100% - 3rem));
+  margin: auto;
+  padding: 2rem 0 1.25rem;
+}
+.hardware-heading {
+  text-align: center;
+}
+.hardware-heading h2 {
+  margin: 0 0 0.65rem;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.hardware-heading p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #52525b;
+  margin: 0;
+}
+.hardware-view {
+  position: relative;
+  flex: 1;
+  min-height: 260px;
+  margin-block: 1rem;
+  overflow: hidden;
+}
+.viewer-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(#d4d4d844 1px, transparent 1px),
+    linear-gradient(90deg, #d4d4d844 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse, black 15%, transparent 70%);
+}
+#hardware-canvas {
+  position: absolute;
+  inset: 0;
+}
+#hardware-canvas canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: pan-y;
+}
+.hardware-poster {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.hardware-poster[hidden] {
+  display: none !important;
+}
+.hardware-poster .assembly-image {
+  max-width: 740px;
+  mix-blend-mode: multiply;
+}
+.viewer-controls {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  z-index: 2;
+  white-space: nowrap;
+}
+.viewer-controls button {
+  background: #fff;
+  color: #27272a;
+  border: 1px solid #d4d4d8;
+  border-radius: 999px;
+  padding: 0.55rem 1rem;
+  font-size: 0.8rem;
+}
+.viewer-controls button:hover:not(:disabled) {
+  border-color: #52525b;
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.viewer-status {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 3.1rem;
+  text-align: center;
+  font-size: 0.75rem;
+  color: #52525b;
+  pointer-events: none;
+  margin: 0;
+}
+.hardware-steps {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1rem;
+}
+.hardware-steps button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 0.9rem 0.5rem;
+  border: 0;
+  border-top: 2px solid #d4d4d8;
+  background: none;
+  color: #52525b;
+}
+.hardware-steps button[aria-pressed="true"] {
+  border-color: #2563eb;
+  color: #1d4ed8;
+}
+.hardware-steps button span {
+  font-size: 0.7rem;
+}
+.hardware-steps button strong {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+.hardware-track {
+  height: 2px;
+  background: #e4e4e7;
+}
+#hardware-progress {
+  width: 100%;
+  height: 100%;
+  background: #2563eb;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+.hardware-static {
+  height: auto;
+  min-height: 0;
+}
+.hardware-static .hardware-stage {
+  position: relative;
+  height: auto;
+  min-height: 0;
+}
+.hardware-static .hardware-view {
+  flex: none;
+  height: 450px;
+}
+.hardware-static .hardware-steps,
+.hardware-static .hardware-labels,
+.hardware-static .hardware-track,
+.hardware-static .viewer-controls {
+  display: none;
+}
+.teleop-section {
+  --teleop-muted: #d4d4d8;
+  --teleop-accent: #ffffff;
+  --teleop-line: #71717a;
+  background: #151716;
+  color: #fff;
+  padding: 5rem 1.5rem;
+  margin-block: 3.5rem;
+}
+.teleop-inner {
+  max-width: 800px;
+  margin: auto;
+}
+.teleop-inner h2 {
+  color: inherit;
+  text-align: center;
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 1.3;
+  margin: 0 0 1.5rem;
+}
+.teleop-summary {
+  text-align: center;
+  color: var(--teleop-muted);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin: 0;
+}
+.teleop-diagram {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr 1fr;
+  gap: 1rem;
+  align-items: center;
+  margin: 3.5rem auto;
+}
+.diagram-end {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+.diagram-end strong {
+  color: inherit;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+.diagram-ring {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 140px;
+  border: 1px solid var(--teleop-line);
+  border-radius: 50%;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+.diagram-ring svg {
+  width: 70px;
+  height: 70px;
+}
+.signal-paths {
+  display: flex;
+  flex-direction: column;
+  gap: 2.3rem;
+}
+.signal-paths > div {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--teleop-accent);
+}
+.signal-line {
+  height: 1px;
+  width: 100%;
+  background: var(--teleop-accent);
+  position: relative;
+}
+.signal-line::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -3px;
+  width: 6px;
+  height: 6px;
+  border-right: 1px solid var(--teleop-accent);
+  border-top: 1px solid var(--teleop-accent);
+  transform: rotate(45deg);
+}
+.signal-line.backward::after {
+  right: auto;
+  left: 0;
+  transform: rotate(-135deg);
+}
+.teleop-section .media-note {
+  color: var(--teleop-muted);
+}
+@media (max-width: 640px) {
+  body {
+    padding-top: 2.5rem;
+  }
+  .research-title {
+    font-size: 2.1rem;
+  }
+  .research-subtitle {
+    font-size: 1.05rem;
+  }
+  .publication-note {
+    font-size: 0.8rem;
+  }
+  .mode-overview {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .mode-overview a {
+    padding: 1.25rem 0;
+    border-bottom: 1px solid #e4e4e7;
+  }
+  .mode-overview h3 {
+    margin-bottom: 0.5rem;
+  }
+  .workflow {
+    gap: 0.7rem;
+    font-size: 0.8rem;
+    padding: 1.5rem 0.5rem;
+  }
+  .workflow strong {
+    padding: 0.5rem;
+  }
+  .hardware-section {
+    height: 740vh;
+    min-height: 2800px;
+  }
+  .hw-label {
+    max-width: 8.5rem;
+    white-space: normal;
+  }
+  .hw-label strong {
+    font-size: 0.6rem;
+  }
+  .hw-label span {
+    font-size: 0.55rem;
+  }
+  .hw-switch {
+    gap: 0.3rem;
+  }
+  .hw-switch button {
+    padding: 0.3rem 0.55rem;
+  }
+  .hw-switch strong {
+    font-size: 0.66rem;
+  }
+  .hw-switch span {
+    font-size: 0.56rem;
+  }
+  .hardware-stage {
+    width: calc(100% - 2rem);
+    min-height: 580px;
+  }
+  .hardware-heading h2,
+  .teleop-inner h2 {
+    font-size: 1.65rem;
+  }
+  .hardware-heading p {
+    font-size: 0.85rem;
+  }
+  .hardware-steps {
+    gap: 0.25rem;
+  }
+  .hardware-steps button {
+    flex-direction: column;
+    gap: 0.3rem;
+    min-width: 0;
+    padding-inline: 0;
+  }
+  .hardware-steps button strong {
+    font-size: 0.5rem;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    text-align: center;
+  }
+  .viewer-status {
+    font-size: 0.65rem;
+  }
+  .hardware-static {
+    height: auto;
+    min-height: 0;
+  }
+  .hardware-static .hardware-view {
+    height: 320px;
+  }
+  .teleop-section {
+    padding: 3rem 1.5rem;
+  }
+  .teleop-summary {
+    font-size: 1rem;
+  }
+  .teleop-diagram {
+    gap: 0.7rem;
+    grid-template-columns: 1fr 1.2fr 1fr;
+    margin-block: 2.5rem;
+  }
+  .diagram-ring {
+    width: 82px;
+    height: 82px;
+    font-size: 1.05rem;
+  }
+  .diagram-ring svg {
+    width: 50px;
+    height: 50px;
+  }
+  .diagram-end strong {
+    font-size: 0.8rem;
+  }
+  .signal-paths > div {
+    font-size: 0.67rem;
+    gap: 0.7rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .hardware-section {
+    height: auto;
+    min-height: 0;
+  }
+  .hardware-stage {
+    position: relative;
+    height: auto;
+    min-height: 0;
+  }
+  .hardware-view {
+    flex: none;
+    height: 400px;
+  }
+  .hardware-steps,
+  .hardware-labels,
+  .hardware-track,
+  .viewer-controls {
+    display: none;
+  }
+}
