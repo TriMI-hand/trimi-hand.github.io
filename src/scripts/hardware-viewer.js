@@ -1648,6 +1648,15 @@ export function initHardwareViewer() {
   );
   observer.observe(container);
 
+  // Start fetching and building the viewer once the page has loaded, so it is
+  // ready before the reader scrolls to it. Frames still render only in view.
+  if (document.readyState === "complete") loadViewer();
+  else
+    window.addEventListener("load", () => loadViewer(), {
+      once: true,
+      signal: listeners.signal,
+    });
+
   motionPreference.addEventListener(
     "change",
     () => {
