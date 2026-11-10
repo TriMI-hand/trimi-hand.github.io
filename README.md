@@ -15,7 +15,7 @@ pnpm preview --host 127.0.0.1
 
 `build` runs Astro's type checks and produces `dist/`. Serve `dist/` for a production preview. Internet access is needed during installation and the first build to obtain dependencies and font files. Videos and their poster frames are served locally. If pnpm requests dependency build approvals during installation, review and approve the listed `esbuild` and `sharp` packages with `pnpm approve-builds esbuild sharp`.
 
-For deployment below a subpath such as `/TRIMI/`, run `pnpm check` then `pnpm astro build --base /TRIMI/`. Asset references and the viewer respect Astro's base URL. Pushing to `main` runs `.github/workflows/deploy.yml`, which builds with the repository name as the base path and publishes to GitHub Pages at https://beomjunkeem.github.io/trimi/ (served as http://junkeem.com/trimi/, the account's custom domain).
+For deployment below a subpath such as `/TRIMI/`, run `pnpm check` then `pnpm astro build --base /TRIMI/`. Asset references and the viewer respect Astro's base URL. Pushing to `main` runs `.github/workflows/deploy.yml`, which builds with the repository name as the base path and publishes to GitHub Pages at https://trimi-hand.github.io/.
 
 ## Edit the content
 
