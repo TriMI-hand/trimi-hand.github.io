@@ -16,3 +16,8 @@ export type Note = {
   symbol: string;
   text: string;
 };
+
+export type Announcement = {
+  text: string;
+  url: string;
+};

@@ -1,10 +1,11 @@
 ---
 import { Font } from "astro:assets";
+import { Icon } from "astro-icon/components";
 
 import Links from "../components/Links.astro";
 import Authors from "../components/Authors.astro";
 import Notes from "../components/Notes.astro";
-import type { Author, Note, Link } from "../types/types";
+import type { Announcement, Author, Note, Link } from "../types/types";
 
 import Table from "../components/Table.astro";
 
@@ -20,6 +21,7 @@ interface Frontmatter {
   authors: Author[];
   conference?: string;
   notes?: Note[];
+  announcement?: Announcement;
   links?: Link[];
   description?: string;
   favicon: string;
@@ -33,6 +35,7 @@ const {
   authors,
   conference,
   notes,
+  announcement,
   links,
   description,
   favicon,
@@ -74,6 +77,20 @@ const prefix = baseUrl.endsWith("/") ? baseUrl : baseUrl + "/";
     <header
       class="research-header mx-auto mb-12 max-w-[64rem] px-6 text-center"
     >
+      {
+        announcement && (
+          <a
+            class="announcement not-prose"
+            href={announcement.url}
+            target="_blank"
+            rel="noopener"
+          >
+            <Icon name="ri:trophy-line" aria-hidden="true" />
+            <span>{announcement.text}</span>
+            <Icon name="ri:arrow-right-up-line" aria-hidden="true" />
+          </a>
+        )
+      }
       <h1
         class="research-title text-[clamp(1.75rem,3.8vw,2.75rem)] font-medium tracking-tight"
       >

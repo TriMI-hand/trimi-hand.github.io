@@ -20,6 +20,31 @@ html {
 .skip-link:focus {
   top: 12px;
 }
+.announcement {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.75rem;
+  padding: 0.45rem 1rem;
+  border-radius: 9999px;
+  background: #fef3c7;
+  color: #78350f;
+  box-shadow: inset 0 0 0 1px #fcd34d;
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.4;
+  text-decoration: none;
+  transition: background-color 0.15s;
+}
+.announcement:hover {
+  background: #fde68a;
+  text-decoration: none;
+}
+.announcement svg {
+  flex: none;
+  width: 1.1em;
+  height: 1.1em;
+}
 .research-title {
   text-wrap: balance;
   line-height: 1.16;
